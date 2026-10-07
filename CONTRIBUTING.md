@@ -6,7 +6,7 @@ OARS `0.4-draft` is open for technical review. Use issues for interoperability q
 
 Describe the problem, the expected behavior, and a small example that demonstrates it. For a normative change, identify the affected RFC sections and compatibility impact. Link existing issues when relevant.
 
-Edit [RFC 0001](rfcs/0001-oars-core.md) as the canonical specification. Keep the schema, examples, resolution fixtures, and [decision log](docs/DECISIONS.md) consistent in the same change. Record substantive draft changes in [CHANGELOG.md](CHANGELOG.md) and the RFC history. Preserve source snapshots and published record identities.
+Edit [RFC 0001](rfcs/0001-oars-core.md) as the canonical specification. Keep the schema, examples, resolution fixtures, and [decision log](docs/DECISIONS.md) consistent in the same change. Record substantive draft changes in [CHANGELOG.md](CHANGELOG.md) and the RFC history. Preserve archived drafts and published record identities.
 
 ## Validate a change
 

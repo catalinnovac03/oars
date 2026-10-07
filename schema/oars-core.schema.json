@@ -39,8 +39,8 @@
   ],
   "additionalProperties": true,
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "OARS Core 0.4-draft — reconstructed experimental repository schema",
-  "$comment": "Derived from the supplied HTML, not the separate original schema. See schema/README.md and DECISIONS.md. No canonical $id has been assigned.",
+  "title": "OARS Core 0.4-draft — experimental JSON Schema",
+  "$comment": "Experimental serialization of the OARS Core model. See schema/README.md and docs/DECISIONS.md for field conventions and open questions. No canonical $id has been assigned.",
   "$defs": {
     "period": {
       "type": "object",

@@ -8,7 +8,7 @@ OARS is published as an experimental public project RFC at [catalinnovac03/oars]
 - Author/editor identities and formal governance are unassigned. Repository ownership and commit metadata do not establish specification authorship or organizational authority.
 - A canonical public domain and global schema-identifier policy are unassigned. RFC 0001 is canonical within the repository.
 - Conduct reporting and enforcement responsibilities have not been established. Contribution etiquette is documented in CONTRIBUTING.md; no standalone code of conduct is adopted.
-- Reconcile the reconstructed schema with the original separately referenced schema if that artifact is recovered.
+- Establish serialization compatibility and document differences before claiming interoperability with other draft artifacts.
 - Resolve the experimental conventions and open questions in [DECISIONS.md](DECISIONS.md) before claiming a stable wire contract.
 
 ## Available project infrastructure

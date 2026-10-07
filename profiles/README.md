@@ -1,6 +1,6 @@
 # Profiles
 
-Profiles may map Core to ecosystems such as OpenTelemetry, A2A, MCP, OASF, or vendor platforms. No profile is implemented or adopted by this bundle. The source's `OARS-OpenTelemetry/0.1-draft` conformance example is illustrative, not evidence that such a profile exists.
+Profiles may map Core to ecosystems such as OpenTelemetry, A2A, MCP, OASF, or vendor platforms. No profile is currently implemented or adopted. The `OARS-OpenTelemetry/0.1-draft` conformance example in RFC 0001 illustrates claim syntax; it does not identify an adopted profile.
 
 A profile must identify its own version and supported exact Core version, describe targets and references, and preserve Core object and resolution meanings. It may add mappings, fields, target types, and processing without converting capability metadata into enterprise grants. `oars.subject.id` and `oars.context.id` are correlation claims, not identity or Context proof.
 

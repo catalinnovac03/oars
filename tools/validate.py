@@ -20,7 +20,7 @@ from resolver import resolve, correlate, semantic_errors
 
 
 def repository_files(suffix):
-    """Exclude local workspace copies and environments from repository checks."""
+    """Exclude local generated files and environments from repository checks."""
     excluded = {'work', 'outputs', '.git', '.venv', 'node_modules', '__pycache__'}
     for directory, subdirectories, filenames in os.walk(ROOT):
         subdirectories[:] = [name for name in subdirectories if name not in excluded]
@@ -152,7 +152,7 @@ def main():
                 self.hrefs.append(attrs['href'])
     snapshot = ROOT / 'provenance/OARS_0.4_Standards_Grade_Public_Review_Draft.html'
     digest = hashlib.sha256(snapshot.read_bytes()).hexdigest()
-    assert digest in (ROOT / 'provenance/README.md').read_text(), 'Source snapshot checksum mismatch'
+    assert digest in (ROOT / 'provenance/README.md').read_text(), 'Archived draft checksum mismatch'
     html = SnapshotParser()
     html.feed(snapshot.read_text())
     for href in html.hrefs:
@@ -163,7 +163,7 @@ def main():
     print(f'PASS: {validated} positive example/fixture documents validated, including nested records/bindings.')
     print(f'PASS: {len(manifest["cases"])} documented invalid fixtures failed at their expected layer/path/rule.')
     print(f'PASS: {len(cases)} resolution cases; {permutations} complete record/binding permutations; inputs preserved.')
-    print(f'PASS: {embedded_json} embedded JSON examples; source snapshot checksum; {links} local links/fragments.')
+    print(f'PASS: {embedded_json} embedded JSON examples; archived draft checksum; {links} local links/fragments.')
 
 
 if __name__ == '__main__':

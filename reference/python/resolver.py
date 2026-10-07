@@ -1,6 +1,6 @@
 """Experimental OARS 0.4-draft fixture resolver, not an enforcement engine.
 
-See docs/DECISIONS.md for conventions beyond the source and trust preconditions.
+See docs/DECISIONS.md for conventions beyond the Core processing requirements and trust preconditions.
 Inputs are already schema-validated, externally accepted Core records.
 """
 from datetime import datetime

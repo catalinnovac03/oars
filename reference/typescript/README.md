@@ -1,6 +1,6 @@
 # TypeScript implementation guidance
 
-This directory is an intentional scaffold; it contains no TypeScript implementation and makes no conformance claim. The user-requested bundle includes the RFC, schemas, fixtures, and an executable Python test harness.
+A TypeScript implementation is not yet available. This directory provides implementation guidance for the Core model and shared conformance fixtures. The [Python harness](../python/README.md) provides an executable reference for comparison.
 
 An implementation should load [the schemas](../../schema/README.md) with Draft 2020-12 and date-time format support, preserve unknown optional data, and implement the [RFC processing model](../../rfcs/0001-oars-core.md#processing-model). Use exact Subject × Context lookup, effective-time history, and the six exact result strings. Do not use array order, issuance recency, or grant union to resolve conflicts.
 

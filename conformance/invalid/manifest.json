@@ -13,7 +13,7 @@
       "layer": "schema",
       "path": "/oars_version",
       "rule": "const",
-      "explanation": "The exact source version is 0.4-draft, not 0.4."
+      "explanation": "The exact Core version is 0.4-draft, not 0.4."
     },
     {
       "file": "invalid-time.json",

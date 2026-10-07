@@ -4,7 +4,7 @@
 |---|---|
 | Status | Experimental public-review project RFC |
 | Core version | `0.4-draft` |
-| Source publication | October 2026 |
+| Publication date | October 2026 |
 | Repository edition | 2026-10-07 |
 | Authors / editors | TODO — not assigned |
 | Maintainers | TODO — not assigned |
@@ -13,7 +13,7 @@
 | Canonical public URL | [RFC 0001 in the project repository](https://github.com/catalinnovac03/oars/blob/main/rfcs/0001-oars-core.md) |
 | License | TODO — not selected; no LICENSE included |
 
-This is a numbered **project RFC**, not an IETF RFC. The supplied OARS 0.4 text is preserved below with the data model moved early, displaced source tables restored, and explicit experimental field tables added. The original machine-readable schema was not supplied. [Provenance](../provenance/README.md) and [DECISIONS.md](../docs/DECISIONS.md) distinguish the source semantics, reconstruction choices, and unresolved details.
+This **project RFC** defines the OARS Core model, experimental JSON serialization, and authority-resolution processing. It is the canonical specification for `0.4-draft`. [Design decisions and open questions](../docs/DECISIONS.md) document experimental conventions and unresolved details. This document does not claim IETF publication.
 
 ## Contents
 
@@ -36,7 +36,7 @@ OARS defines a portable representation of the governance identity, context, and 
 
 ## Status of This Document
 
-This document is Draft 0.4 for public review and interoperability experiments. The Core semantics and processing model are experimental. Implementations **MAY** be built against this draft, but conformance claims **MUST** identify the exact draft version. Breaking changes **MAY** occur before OARS 1.0. The canonical URL, public repository, named editors, contribution process, and license are publication prerequisites and are intentionally not invented in this draft.
+This document is Draft 0.4 for public review and interoperability experiments. The Core semantics and processing model are experimental. Implementations **MAY** be built against this draft, but conformance claims **MUST** identify the exact draft version. Breaking changes **MAY** occur before OARS 1.0. Editor identities, licensing, and formal project governance remain open publication decisions.
 
 <a id="introduction"></a>
 
@@ -104,7 +104,7 @@ record:
 
 ### Normative field tables for this experimental repository serialization
 
-The preserved source requirements and the reconstructed wire choices must be read together with [schema provenance](../schema/README.md) and [open decisions](../docs/DECISIONS.md). “Required” below describes this repository schema, not an assertion that the unavailable original schema was identical. All objects permit unknown optional fields. Nonempty strings do not by themselves prove identity or authority.
+The field tables define requiredness for this experimental JSON serialization. Read them together with the [schema documentation](../schema/README.md) and [open design decisions](../docs/DECISIONS.md). All objects permit unknown optional fields. Nonempty strings do not by themselves prove identity or authority.
 
 | Field | Type | Required | Meaning |
 |---|---|---|---|
@@ -133,20 +133,20 @@ The preserved source requirements and the reconstructed wire choices must be rea
 | `grant.human_authorization` | object | No | If present, required boolean `required`; true constrains the grant. |
 | `grant.policy_refs` | string array | No | External constraints; not evaluated by Core. |
 | `authority_envelope.delegation` | object | No | Required `permitted` boolean; optional `delegate_refs` string array and `redelegation` boolean. No transitive or grant-level inference. |
-| `assessment.decision` | string | Conditional | Required for a represented approved state; not universally schema-required. No closed vocabulary is invented. |
+| `assessment.decision` | string | Conditional | Required for a represented approved state; not universally schema-required. No closed decision vocabulary is defined. |
 | `assessment.effective` | period | No | Assessment validity; expiry is not an automatic deny. |
 | `assessment.references` | reference array | No | External evidence, with required `rel`, `ref` and optional `type` strings. |
 
 | Binding field | Type | Required | Meaning |
 |---|---|---|---|
 | `scope_ref` | string | Yes | Governance Scope being mapped. |
-| Subject Binding `implementation` | target | Yes | Technical implementation in the illustrated source shape. |
+| Subject Binding `implementation` | target | Yes | Technical implementation using the illustrated binding shape. |
 | Authority Binding `authority_ref` | string | Yes | Enterprise authority being mapped. |
 | Authority Binding `target` | target | Yes | Technical skill, tool, capability, or runtime semantic. |
 | target `type`, `ref` | strings | Yes | Ecosystem target type and identifier; no closed vendor registry. |
 | `effective` | period | Yes | Mapping validity. |
 | `asserted_by` | string | No | Claimed asserter; SHOULD be identified for significant mappings. |
-| `references` | reference array | No | Experimental evidence representation; source recommends supporting evidence. |
+| `references` | reference array | No | Experimental evidence representation; significant bindings SHOULD identify supporting evidence. |
 
 The standalone [binding document schema](../schema/oars-binding.schema.json) uses `oars_version` and exactly one of `subject_binding` or `authority_binding`. This wrapper and [fixture containers](../schema/fixture.schema.json) are repository serialization conveniences, not a new Core transport.
 
@@ -384,7 +384,7 @@ Draft 0.4 defines JSON as the first machine-readable serialization for interoper
 
 - Core extension data SHOULD be placed under extensions or a profile-defined namespace to reduce collision risk.
 
-The original referenced schema was not supplied. The [reconstructed repository schema](../schema/README.md) is the executable artifact for this edition.
+The [Core JSON Schema](../schema/README.md) defines the experimental machine-readable representation for this draft.
 
 <a id="processing-model"></a>
 
@@ -427,7 +427,7 @@ The authority-resolution operation accepts: Subject identifier S, Context identi
 | UNKNOWN\_SCOPE | No Governance Scope for S x C can be resolved. |
 | INDETERMINATE | Applicable OARS state cannot be resolved unambiguously. |
 
-Repository execution conventions and unresolved edge cases are explicitly separated in [DECISIONS.md](../docs/DECISIONS.md). They do not silently alter the source algorithm. The steps above are applied in their listed order.
+Repository execution conventions and unresolved edge cases are explicitly separated in [DECISIONS.md](../docs/DECISIONS.md). These conventions are separate from the Core processing requirements. The steps above are applied in their listed order.
 
 <a id="conformance"></a>
 
@@ -699,19 +699,19 @@ Acknowledgements will be added as public reviewers and implementation contributo
 
 ## Appendix E. Repository examples and implementation guidance
 
-- [Claims Assistant](0001-oars-core/claims-assistant.json) is the source Appendix A record, unchanged as a JSON value. Its predecessor is external to that single-record example.
+- [Claims Assistant](0001-oars-core/claims-assistant.json) is the complete record from Appendix A. Its predecessor is external to that single-record example.
 - [Migration from Microsoft to AWS](0001-oars-core/migration-microsoft-aws.json) keeps Subject, Context, Assessment, accountability, and the Authority Envelope unchanged. Microsoft mappings end when AWS mappings start. Human authorization remains required across the cutover. Vendor names and Acme identifiers are illustrative.
 - [Retrospective correction](0001-oars-core/retrospective-correction.json) retains the erroneous original statement and a later-issued correction covering the same effective state. The change corrects representation, rather than purporting to grant new authority in the past.
 
-The source’s portability acceptance criterion is that a neutral consumer can reconstruct authority, context, assessment, and implementation mappings at a relevant time without requiring the historical vendor’s proprietary governance model.
+The portability acceptance criterion is that a neutral consumer can reconstruct authority, context, assessment, and implementation mappings at a relevant time without requiring the historical vendor’s proprietary governance model.
 
 The latter two files are fixture containers with `records` and optional binding arrays. They do not define a standardized batch wire format. [Conformance documentation](../conformance/README.md) explains schema and semantic validation and expected failures. The [Python harness](../reference/python/README.md) exercises deterministic results; [TypeScript](../reference/typescript/README.md) is an implementation scaffold.
 
-Effective time selects historical governance state. Issued time records when the statement was made. Newest-issued-wins is not the source's history model. External policy references and human authorization constraints do not establish that policy passed or authorization occurred. Do not collapse missing grants into deny, and do not treat technical capability or a binding as a grant.
+Effective time selects historical governance state. Issued time records when the statement was made. The Core history model does not use newest-issued-wins. External policy references and human authorization constraints do not establish that policy passed or authorization occurred. Do not collapse missing grants into deny, and do not treat technical capability or a binding as a grant.
 
 ### Repository edition history
 
-- 2026-10-07: Converted the supplied 0.4 HTML into a canonical project RFC; retained source semantics and Appendix A; reconstructed an experimental schema; added illustrative migration/correction data, conformance cases, and a Python harness. No 0.5 semantics, original-schema equivalence, license, author identity, or project governance is claimed. See the decision log for unsettled details.
+- 2026-10-07: Publish the Core project RFC with experimental JSON Schemas, migration and correction examples, conformance cases, and a Python reference harness. The Core version remains `0.4-draft`; open serialization and resolution questions are documented in the decision log.
 
 ### Reference links
 
@@ -720,4 +720,4 @@ Effective time selects historical governance state. Issued time records when the
 - [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12).
 - [Harbor ATIF project RFC](https://github.com/harbor-framework/harbor/blob/main/rfcs/0001-trajectory-format.md): publication-structure inspiration only; no Harbor data model or governance is adopted.
 
-The informative ecosystems named in source Section 21 are context, not a claim that profiles, integrations, or current-version compatibility have been implemented.
+The informative ecosystems named in Section 21 are context, not a claim that profiles, integrations, or current-version compatibility have been implemented.

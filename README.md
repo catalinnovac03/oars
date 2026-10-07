@@ -54,7 +54,7 @@ Validation checks JSON syntax, schemas, examples, expected invalid records, dete
 
 ## Status and participation
 
-The schema was reconstructed from the supplied OARS 0.4 specification; the separate original schema was unavailable. [Design decisions and open questions](docs/DECISIONS.md) identify experimental serialization and resolution conventions. Breaking changes may occur before 1.0. This is a public project RFC, with no claim of IETF publication or standards-body approval.
+The JSON Schema and reference harness implement an experimental serialization and resolution model. [Design decisions and open questions](docs/DECISIONS.md) document the current conventions and issues to settle before a stable wire contract. Breaking changes may occur before 1.0. This is a public project RFC, with no claim of IETF publication or standards-body approval.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to propose specification changes or implementation fixes, and [SECURITY.md](SECURITY.md) for security reporting.
 
