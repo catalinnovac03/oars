@@ -1,0 +1,124 @@
+{
+  "fixture_version": "1",
+  "id": "19-capability-is-not-grant",
+  "records": [
+    {
+      "oars_version": "0.4-draft",
+      "record": {
+        "id": "urn:acme:oars:record:claims:001",
+        "issued_at": "2027-01-01T00:00:00Z",
+        "issued_by": "urn:acme:ai-governance"
+      },
+      "scope": {
+        "id": "urn:acme:oars:scope:claims-eu-production",
+        "subject": {
+          "id": "urn:acme:ai-system:claims-assistant",
+          "type": "ai_system"
+        },
+        "context": {
+          "id": "urn:acme:context:claims-eu-production",
+          "purpose_ref": "urn:acme:use-case:claims-assistance"
+        }
+      },
+      "accountability": [
+        {
+          "role": "accountable",
+          "party_ref": "urn:acme:org:claims"
+        }
+      ],
+      "effective": {
+        "from": "2027-01-01T00:00:00Z"
+      },
+      "authority_envelope": {
+        "grants": [],
+        "delegation": {
+          "permitted": true,
+          "delegate_refs": [
+            "urn:acme:agent:document-summarizer"
+          ],
+          "redelegation": false
+        }
+      },
+      "assessment": {
+        "decision": "approved",
+        "references": [
+          {
+            "rel": "assessment_evidence",
+            "type": "oscal",
+            "ref": "urn:acme:oscal:assessment:claims-2027"
+          }
+        ]
+      }
+    }
+  ],
+  "query": {
+    "subject": "urn:acme:ai-system:claims-assistant",
+    "context": "urn:acme:context:claims-eu-production",
+    "authority": "urn:acme:authority:customer-communication.send",
+    "time": "2027-04-01T00:00:00Z"
+  },
+  "expected": {
+    "result": "NOT_GRANTED_BY_ENVELOPE"
+  },
+  "subject_bindings": [
+    {
+      "scope_ref": "urn:acme:oars:scope:claims-eu-production",
+      "implementation": {
+        "type": "microsoft_agent",
+        "ref": "MS-817"
+      },
+      "asserted_by": "urn:acme:platform-governance",
+      "effective": {
+        "from": "2027-01-01T00:00:00Z",
+        "until": "2027-07-01T00:00:00Z"
+      }
+    },
+    {
+      "scope_ref": "urn:acme:oars:scope:claims-eu-production",
+      "implementation": {
+        "type": "aws_agent",
+        "ref": "AG-441"
+      },
+      "asserted_by": "urn:acme:platform-governance",
+      "effective": {
+        "from": "2027-07-01T00:00:00Z"
+      }
+    }
+  ],
+  "authority_bindings": [
+    {
+      "scope_ref": "urn:acme:oars:scope:claims-eu-production",
+      "authority_ref": "urn:acme:authority:customer-communication.send",
+      "target": {
+        "type": "microsoft_capability",
+        "ref": "MS-817/send"
+      },
+      "asserted_by": "urn:acme:ai-governance",
+      "effective": {
+        "from": "2027-01-01T00:00:00Z",
+        "until": "2027-07-01T00:00:00Z"
+      }
+    },
+    {
+      "scope_ref": "urn:acme:oars:scope:claims-eu-production",
+      "authority_ref": "urn:acme:authority:customer-communication.send",
+      "target": {
+        "type": "aws_capability",
+        "ref": "AG-441/dispatch"
+      },
+      "asserted_by": "urn:acme:ai-governance",
+      "effective": {
+        "from": "2027-07-01T00:00:00Z"
+      }
+    }
+  ],
+  "trusted_asserted_by": [
+    "urn:acme:platform-governance",
+    "urn:acme:ai-governance"
+  ],
+  "expected_mapping": {
+    "status": "MAPPED",
+    "implementation_ref": "MS-817",
+    "target_ref": "MS-817/send"
+  }
+}

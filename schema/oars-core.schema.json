@@ -1,0 +1,425 @@
+{
+  "type": "object",
+  "properties": {
+    "oars_version": {
+      "const": "0.4-draft"
+    },
+    "record": {
+      "$ref": "#/$defs/record"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "effective": {
+      "$ref": "#/$defs/period"
+    },
+    "authority_envelope": {
+      "$ref": "#/$defs/envelope"
+    },
+    "assessment": {
+      "$ref": "#/$defs/assessment"
+    },
+    "accountability": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/accountability"
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "oars_version",
+    "record",
+    "scope",
+    "effective",
+    "authority_envelope",
+    "assessment"
+  ],
+  "additionalProperties": true,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OARS Core 0.4-draft — reconstructed experimental repository schema",
+  "$comment": "Derived from the supplied HTML, not the separate original schema. See schema/README.md and DECISIONS.md. No canonical $id has been assigned.",
+  "$defs": {
+    "period": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "from"
+      ],
+      "additionalProperties": true
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "rel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "rel",
+        "ref"
+      ],
+      "additionalProperties": true
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "type",
+        "ref"
+      ],
+      "additionalProperties": true
+    },
+    "relationship": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "supersedes",
+            "corrects"
+          ]
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "ref"
+      ],
+      "additionalProperties": true
+    },
+    "record": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "issued_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship": {
+          "$ref": "#/$defs/relationship"
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "issued_at"
+      ],
+      "additionalProperties": true
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": true
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "context": {
+          "$ref": "#/$defs/context"
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "subject",
+        "context"
+      ],
+      "additionalProperties": true
+    },
+    "grant": {
+      "type": "object",
+      "properties": {
+        "authority_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "human_authorization": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "extensions": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "required"
+          ],
+          "additionalProperties": true
+        },
+        "policy_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "authority_ref"
+      ],
+      "additionalProperties": true
+    },
+    "delegation": {
+      "type": "object",
+      "properties": {
+        "permitted": {
+          "type": "boolean"
+        },
+        "delegate_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "redelegation": {
+          "type": "boolean"
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "permitted"
+      ],
+      "additionalProperties": true
+    },
+    "envelope": {
+      "type": "object",
+      "properties": {
+        "grants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/grant"
+          }
+        },
+        "delegation": {
+          "$ref": "#/$defs/delegation"
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "grants"
+      ],
+      "additionalProperties": true
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "decision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective": {
+          "$ref": "#/$defs/period"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [],
+      "additionalProperties": true
+    },
+    "accountability": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "party_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "role",
+        "party_ref"
+      ],
+      "additionalProperties": true
+    },
+    "subject_binding": {
+      "type": "object",
+      "properties": {
+        "scope_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementation": {
+          "$ref": "#/$defs/target"
+        },
+        "asserted_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective": {
+          "$ref": "#/$defs/period"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "scope_ref",
+        "implementation",
+        "effective"
+      ],
+      "additionalProperties": true
+    },
+    "authority_binding": {
+      "type": "object",
+      "properties": {
+        "scope_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "$ref": "#/$defs/target"
+        },
+        "asserted_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective": {
+          "$ref": "#/$defs/period"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "scope_ref",
+        "authority_ref",
+        "target",
+        "effective"
+      ],
+      "additionalProperties": true
+    }
+  }
+}

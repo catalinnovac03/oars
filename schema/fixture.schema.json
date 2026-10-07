@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "fixture_version": {
+      "const": "1"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "oars-core.schema.json"
+      }
+    },
+    "subject_bindings": {
+      "type": "array",
+      "items": {
+        "$ref": "oars-core.schema.json#/$defs/subject_binding"
+      }
+    },
+    "authority_bindings": {
+      "type": "array",
+      "items": {
+        "$ref": "oars-core.schema.json#/$defs/authority_binding"
+      }
+    },
+    "query": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "time": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "subject",
+        "context",
+        "authority",
+        "time"
+      ],
+      "additionalProperties": true
+    },
+    "expected": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "enum": [
+            "GRANTED",
+            "GRANTED_SUBJECT_TO_HUMAN_AUTHORIZATION",
+            "GRANTED_SUBJECT_TO_POLICY",
+            "NOT_GRANTED_BY_ENVELOPE",
+            "UNKNOWN_SCOPE",
+            "INDETERMINATE"
+          ]
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "fixture_version",
+    "records"
+  ],
+  "additionalProperties": true,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Repository example and resolution fixture container"
+}

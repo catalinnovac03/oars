@@ -1,0 +1,17 @@
+# Local environments and generated artifacts
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+dist/
+coverage/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.zip
+
+# Local workspace files and downloadable bundles
+/work/
+/outputs/

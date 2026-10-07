@@ -1,0 +1,16 @@
+{
+  "oars_version": "0.4-draft",
+  "authority_binding": {
+    "scope_ref": "urn:acme:oars:scope:claims-eu-production",
+    "authority_ref": "urn:acme:authority:customer-communication.send",
+    "target": {
+      "type": "microsoft_capability",
+      "ref": "MS-817/send"
+    },
+    "asserted_by": "urn:acme:ai-governance",
+    "effective": {
+      "from": "2027-01-01T00:00:00Z",
+      "until": "2027-07-01T00:00:00Z"
+    }
+  }
+}

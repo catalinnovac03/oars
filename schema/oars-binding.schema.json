@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "oars_version": {
+      "const": "0.4-draft"
+    },
+    "subject_binding": {
+      "$ref": "oars-core.schema.json#/$defs/subject_binding"
+    },
+    "authority_binding": {
+      "$ref": "oars-core.schema.json#/$defs/authority_binding"
+    }
+  },
+  "required": [
+    "oars_version"
+  ],
+  "additionalProperties": true,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experimental binding document wrapper",
+  "oneOf": [
+    {
+      "required": [
+        "subject_binding"
+      ],
+      "not": {
+        "required": [
+          "authority_binding"
+        ]
+      }
+    },
+    {
+      "required": [
+        "authority_binding"
+      ],
+      "not": {
+        "required": [
+          "subject_binding"
+        ]
+      }
+    }
+  ]
+}

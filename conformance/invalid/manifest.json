@@ -1,0 +1,68 @@
+{
+  "fixture_version": "1",
+  "cases": [
+    {
+      "file": "missing-scope.json",
+      "layer": "schema",
+      "path": "/",
+      "rule": "required",
+      "explanation": "Core records require Governance Scope."
+    },
+    {
+      "file": "wrong-version.json",
+      "layer": "schema",
+      "path": "/oars_version",
+      "rule": "const",
+      "explanation": "The exact source version is 0.4-draft, not 0.4."
+    },
+    {
+      "file": "invalid-time.json",
+      "layer": "schema",
+      "path": "/record/issued_at",
+      "rule": "format",
+      "explanation": "RFC 3339 date-time required; enable format checking."
+    },
+    {
+      "file": "missing-authority-ref.json",
+      "layer": "schema",
+      "path": "/authority_envelope/grants/0",
+      "rule": "required",
+      "explanation": "Each grant identifies enterprise authority."
+    },
+    {
+      "file": "human-authorization-string.json",
+      "layer": "schema",
+      "path": "/authority_envelope/grants/2/human_authorization/required",
+      "rule": "type",
+      "explanation": "A string is not a boolean."
+    },
+    {
+      "file": "unknown-history-type.json",
+      "layer": "schema",
+      "path": "/record/relationship/type",
+      "rule": "enum",
+      "explanation": "Core defines supersedes and corrects, not a revokes relation."
+    },
+    {
+      "file": "empty-period.json",
+      "layer": "semantic",
+      "path": "/effective",
+      "rule": "period_order",
+      "explanation": "Repository interval convention requires until > from."
+    },
+    {
+      "file": "duplicate-grant.json",
+      "layer": "semantic",
+      "path": "/authority_envelope/grants",
+      "rule": "duplicate_authority",
+      "explanation": "Repository harness rejects duplicate authority keys rather than choosing a grant."
+    },
+    {
+      "file": "self-correction.json",
+      "layer": "semantic",
+      "path": "/record/relationship",
+      "rule": "self_relationship",
+      "explanation": "A record cannot correct itself."
+    }
+  ]
+}

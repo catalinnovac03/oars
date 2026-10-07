@@ -1,0 +1,65 @@
+{
+  "oars_version": "0.4-draft",
+  "record": {
+    "id": "urn:acme:oars:record:claims:001",
+    "issued_at": "2027-01-01T00:00:00Z",
+    "issued_by": "urn:acme:ai-governance"
+  },
+  "scope": {
+    "id": "urn:acme:oars:scope:claims-eu-production",
+    "subject": {
+      "id": "urn:acme:ai-system:claims-assistant",
+      "type": "ai_system"
+    },
+    "context": {
+      "id": "urn:acme:context:claims-eu-production",
+      "purpose_ref": "urn:acme:use-case:claims-assistance"
+    }
+  },
+  "accountability": [
+    {
+      "role": "accountable",
+      "party_ref": "urn:acme:org:claims"
+    }
+  ],
+  "effective": {
+    "from": "2027-01-01T00:00:00Z",
+    "until": "2027-01-01T00:00:00Z"
+  },
+  "authority_envelope": {
+    "grants": [
+      {
+        "authority_ref": "urn:acme:authority:claims.read"
+      },
+      {
+        "authority_ref": "urn:acme:authority:customer-communication.draft"
+      },
+      {
+        "authority_ref": "urn:acme:authority:customer-communication.send",
+        "human_authorization": {
+          "required": true
+        },
+        "policy_refs": [
+          "urn:acme:policy:customer-send"
+        ]
+      }
+    ],
+    "delegation": {
+      "permitted": true,
+      "delegate_refs": [
+        "urn:acme:agent:document-summarizer"
+      ],
+      "redelegation": false
+    }
+  },
+  "assessment": {
+    "decision": "approved",
+    "references": [
+      {
+        "rel": "assessment_evidence",
+        "type": "oscal",
+        "ref": "urn:acme:oscal:assessment:claims-2027"
+      }
+    ]
+  }
+}

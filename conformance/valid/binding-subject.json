@@ -1,0 +1,15 @@
+{
+  "oars_version": "0.4-draft",
+  "subject_binding": {
+    "scope_ref": "urn:acme:oars:scope:claims-eu-production",
+    "implementation": {
+      "type": "microsoft_agent",
+      "ref": "MS-817"
+    },
+    "asserted_by": "urn:acme:platform-governance",
+    "effective": {
+      "from": "2027-01-01T00:00:00Z",
+      "until": "2027-07-01T00:00:00Z"
+    }
+  }
+}
