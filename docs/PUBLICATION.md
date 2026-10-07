@@ -1,6 +1,6 @@
 # Publication decisions
 
-OARS is published as an experimental public project RFC at [catalinnovac03/oars](https://github.com/catalinnovac03/oars). The exact Core version is `0.4-draft`.
+OARS is presented as a **proposed open, vendor-neutral standard**, with **Public Review Draft** status, at [catalinnovac03/oars](https://github.com/catalinnovac03/oars). The exact Core version is `0.4-draft`. The project invites review, independent implementation, and interoperability results; independent interoperability and adoption have not yet been demonstrated.
 
 ## Open decisions
 

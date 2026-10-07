@@ -1,8 +1,10 @@
 # Changelog
 
-OARS is experimental before 1.0. The exact Core version is `0.4-draft`.
+OARS is a proposed open standard in public review. Breaking changes may occur before 1.0. The exact Core version is `0.4-draft`.
 
 ## 0.4-draft — October 2026
+
+- Present OARS as a proposed open standard with Public Review Draft status; invite technical review, independent implementations, and interoperability results.
 
 - Rename the project to **Open Authority Record Standard**, retaining the OARS acronym and Core version.
 

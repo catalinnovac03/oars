@@ -1,6 +1,8 @@
 # Contributing to OARS
 
-OARS `0.4-draft` is open for technical review. Use issues for interoperability questions and proposals, and pull requests for concrete specification or implementation changes.
+OARS is a proposed open standard, currently at `0.4-draft` with Public Review Draft status. Technical review, independent implementation, and interoperability results are welcome. Use issues for interoperability questions and proposals, and pull requests for concrete specification or implementation changes.
+
+Challenge the Core model with concrete use cases, identify ambiguous requirements, and compare independently developed implementations against the shared fixtures. Report implementation versions, inputs, observed results, and any differences from the RFC or reference harness. An implementation report should identify its tested scope and limitations.
 
 ## Propose a change
 

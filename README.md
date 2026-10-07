@@ -2,11 +2,13 @@
 
 [![Validate OARS](https://github.com/catalinnovac03/oars/actions/workflows/validate.yml/badge.svg)](https://github.com/catalinnovac03/oars/actions/workflows/validate.yml)
 
-OARS is a vendor-neutral standard for recording the enterprise-granted authority of AI systems and agents. It represents governance identity and context across platforms.
+OARS is a **proposed open, vendor-neutral standard** for representing the enterprise-granted authority of AI systems and agents. It carries governance identity, context, and authority across platforms.
 
 **Capability describes what an AI system can do. Authority describes what the enterprise has authorized it to do.** OARS connects durable governance meaning to changing implementations through effective-dated bindings.
 
-**Start with [RFC 0001: OARS Core](rfcs/0001-oars-core.md).** The current version is `0.4-draft`, published as an experimental project RFC for public review and interoperability testing.
+**Status: Public Review Draft · Version: 0.4-draft**
+
+Start with [RFC 0001: OARS Core](rfcs/0001-oars-core.md), the canonical project specification.
 
 ## The model
 
@@ -45,16 +47,22 @@ Validation checks JSON syntax, schemas, examples, expected invalid records, dete
 | Directory | Contents |
 |---|---|
 | [rfcs](rfcs/0001-oars-core.md) | Canonical Core specification and worked examples. |
-| [schema](schema/README.md) | Experimental Core, binding, and fixture schemas. |
+| [schema](schema/README.md) | Draft Core, binding, and fixture schemas. |
 | [conformance](conformance/README.md) | Valid/invalid records and deterministic resolution vectors. |
-| [reference/python](reference/python/README.md) | Executable experimental reference harness. |
+| [reference/python](reference/python/README.md) | Executable reference harness. |
 | [reference/typescript](reference/typescript/README.md) | Implementation guidance and scaffold. |
 | [profiles](profiles/README.md) | Guidance for independently versioned ecosystem mappings. |
 | [docs](docs/README.md) | Design decisions, open review items, and validation details. |
 
 ## Status and participation
 
-The JSON Schema and reference harness implement an experimental serialization and resolution model. [Design decisions and open questions](docs/DECISIONS.md) document the current conventions and issues to settle before a stable wire contract. Breaking changes may occur before 1.0. This is a public project RFC, with no claim of IETF publication or standards-body approval.
+OARS is open for public review, independent implementation, and interoperability testing. Review the specification, challenge the authority model, implement it independently, and contribute interoperability results.
+
+- [Review RFC 0001](rfcs/0001-oars-core.md) and its [open design questions](docs/DECISIONS.md).
+- [Discuss a proposal or report a problem](https://github.com/catalinnovac03/oars/issues).
+- Build an independent implementation against the [conformance cases](conformance/README.md) and report disagreements or portability results.
+
+The draft leaves some serialization and resolution details under review; the reference harness documents its experimental conventions. Breaking changes may occur before 1.0. Independent interoperability and adoption have not yet been demonstrated. The proposal does not claim IETF publication or standards-body approval.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to propose specification changes or implementation fixes, and [SECURITY.md](SECURITY.md) for security reporting.
 

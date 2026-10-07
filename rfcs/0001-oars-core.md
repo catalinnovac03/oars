@@ -2,18 +2,18 @@
 
 | Field | Value |
 |---|---|
-| Status | Experimental public-review project RFC |
+| Status | Public Review Draft |
 | Core version | `0.4-draft` |
 | Publication date | October 2026 |
 | Repository edition | 2026-10-07 |
 | Authors / editors | TODO — not assigned |
 | Maintainers | TODO — not assigned |
-| Target | Experimental vendor-neutral interoperability specification |
+| Target | Proposed open, vendor-neutral authority standard |
 | Canonical source | This Markdown file in the repository |
 | Canonical public URL | [RFC 0001 in the project repository](https://github.com/catalinnovac03/oars/blob/main/rfcs/0001-oars-core.md) |
 | License | TODO — not selected; no LICENSE included |
 
-This **project RFC** defines the OARS Core model, experimental JSON serialization, and authority-resolution processing. It is the canonical specification for `0.4-draft`. [Design decisions and open questions](../docs/DECISIONS.md) document experimental conventions and unresolved details. This document does not claim IETF publication.
+OARS is a **proposed open, vendor-neutral standard** for representing the enterprise-granted authority of AI systems and agents. This **project RFC** defines the Core model, draft JSON serialization, and authority-resolution processing. It is the canonical specification for `0.4-draft`. [Design decisions and open questions](../docs/DECISIONS.md) document experimental implementation conventions and unresolved details. The proposal does not claim IETF publication or standards-body approval.
 
 ## Contents
 
@@ -36,7 +36,7 @@ OARS defines a portable representation of the governance identity, context, and 
 
 ## Status of This Document
 
-This document is Draft 0.4 for public review and interoperability experiments. The Core semantics and processing model are experimental. Implementations **MAY** be built against this draft, but conformance claims **MUST** identify the exact draft version. Breaking changes **MAY** occur before OARS 1.0. Editor identities, licensing, and formal project governance remain open publication decisions.
+This document is the OARS 0.4 **Public Review Draft**. Public review, independent implementations, and interoperability testing are invited. Some serialization and resolution details remain under review, as documented in the design decision log. Implementations **MAY** be built against this draft, but conformance claims **MUST** identify the exact draft version. Breaking changes **MAY** occur before OARS 1.0. Independent interoperability and adoption have not yet been demonstrated. Editor identities, licensing, and formal project governance remain open publication decisions.
 
 <a id="introduction"></a>
 

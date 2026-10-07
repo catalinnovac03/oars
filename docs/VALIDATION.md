@@ -11,7 +11,7 @@ Validated on 2026-10-07 using Python 3.14 and jsonschema 4.26.0 with date-time f
 | Authority-resolution cases | 27 passed |
 | Complete record/binding order permutations | 65 passed; no input mutation |
 | JSON examples embedded in the RFC | 2 parsed and schema-validated |
-| Local Markdown and archived HTML links/fragments | 174 passed |
+| Local Markdown and archived HTML links/fragments | 176 passed |
 | Archived draft snapshot | SHA-256 matches the archive record |
 
 Run `python tools/validate.py` after installing the requirements in `reference/python/requirements.txt`. The script checks JSON syntax, schemas, fixtures, resolution results, the archived draft checksum, and local links.
