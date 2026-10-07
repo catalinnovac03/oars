@@ -1,4 +1,4 @@
-# RFC 0001: Open AI Authority Record Standard (OARS) Core
+# RFC 0001: Open Authority Record Standard (OARS) Core
 
 | Field | Value |
 |---|---|

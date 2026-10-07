@@ -4,6 +4,8 @@ OARS is experimental before 1.0. The exact Core version is `0.4-draft`.
 
 ## 0.4-draft — October 2026
 
+- Rename the project to **Open Authority Record Standard**, retaining the OARS acronym and Core version.
+
 - Publish RFC 0001 as the canonical project specification, with the 0.4 Core model and complete example record.
 - Provide an experimental JSON Schema, binding/fixture schemas, and documented serialization choices.
 - Add Claims Assistant, Microsoft-to-AWS migration, and retrospective-correction examples.

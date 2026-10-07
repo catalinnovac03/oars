@@ -1,8 +1,8 @@
-# OARS — Open AI Authority Record Standard
+# OARS — Open Authority Record Standard
 
 [![Validate OARS](https://github.com/catalinnovac03/oars/actions/workflows/validate.yml/badge.svg)](https://github.com/catalinnovac03/oars/actions/workflows/validate.yml)
 
-OARS describes the governance identity, context, and enterprise-granted authority of AI systems across platforms.
+OARS is a vendor-neutral standard for recording the enterprise-granted authority of AI systems and agents. It represents governance identity and context across platforms.
 
 **Capability describes what an AI system can do. Authority describes what the enterprise has authorized it to do.** OARS connects durable governance meaning to changing implementations through effective-dated bindings.
 
