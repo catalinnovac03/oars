@@ -20,4 +20,8 @@ Keep implementation identifiers in bindings. Preserve Subject × Context semanti
 
 Discuss technical claims respectfully and support them with examples or evidence. Use synthetic records; avoid posting private enterprise data, credentials, customer information, or private assessment evidence. Use the [security reporting route](SECURITY.md) for vulnerabilities.
 
-Licensing, named editors, formal decision authority, and conduct-reporting responsibilities remain [open publication decisions](docs/PUBLICATION.md). This document establishes no contributor license agreement, governance organization, response deadline, or named approver.
+Formal decision authority and conduct-reporting responsibilities remain [open publication decisions](docs/PUBLICATION.md). This document establishes no contributor license agreement, governance organization, response deadline, or named approver.
+
+## Contribution licensing
+
+The repository uses [Apache License 2.0](LICENSE). Contributions intentionally submitted for inclusion are covered by its contribution terms unless explicitly stated otherwise. Submit only material you are entitled to contribute, and retain any applicable third-party notices. No separate contributor license agreement is adopted.

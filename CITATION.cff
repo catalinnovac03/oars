@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the OARS proposal using the preferred citation below."
+type: software
+license: Apache-2.0
+title: "OARS: Open Authority Record Standard"
+authors:
+  - given-names: "Catalin"
+    family-names: "Novac"
+version: "0.4-draft"
+repository-code: "https://github.com/catalinnovac03/oars"
+url: "https://github.com/catalinnovac03/oars"
+keywords:
+  - AI governance
+  - AI agents
+  - enterprise authority
+  - interoperability
+  - standards
+preferred-citation:
+  type: report
+  title: "Open Authority Record Standard (OARS): Core - Public Review Draft"
+  authors:
+    - given-names: "Catalin"
+      family-names: "Novac"
+  year: 2026
+  version: "0.4-draft"
+  url: "https://github.com/catalinnovac03/oars/blob/main/rfcs/0001-oars-core.md"
+  notes: "Proposed open standard; public review draft."

@@ -1,7 +1,8 @@
 # Project documentation
 
 - [Design decisions and open questions](DECISIONS.md): experimental serialization choices, executable test conventions, and issues to settle before a stable wire contract.
-- [Publication decisions](PUBLICATION.md): licensing, editor identities, and project governance items awaiting explicit decisions.
+- [Citation and attribution](CITATION.md): author/editor credit and preferred citation.
+- [Publication decisions](PUBLICATION.md): confirmed attribution and licensing, plus remaining project governance decisions.
 - [Validation report](VALIDATION.md): checked examples, fixtures, temporal resolution, links, and practical limits.
 - [Draft archive](../provenance/README.md): historical specification snapshot and checksum.
 

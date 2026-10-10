@@ -8,6 +8,8 @@ OARS is a **proposed open, vendor-neutral standard** for representing the enterp
 
 **Status: Public Review Draft · Version: 0.4-draft**
 
+**Author and editor: Catalin Novac.** See the [preferred citation](docs/CITATION.md) when referencing the proposal.
+
 Start with [RFC 0001: OARS Core](rfcs/0001-oars-core.md), the canonical project specification.
 
 ## The model
@@ -66,4 +68,4 @@ The draft leaves some serialization and resolution details under review; the ref
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to propose specification changes or implementation fixes, and [SECURITY.md](SECURITY.md) for security reporting.
 
-**License TODO: no license has been selected.** Editor identities, formal governance, and any canonical domain remain unassigned; see [publication decisions](docs/PUBLICATION.md).
+**License: [Apache 2.0](LICENSE).** The specification, documentation, schemas, examples, fixtures, and reference code use the same license. Formal governance and any canonical domain remain unassigned; see [publication decisions](docs/PUBLICATION.md).

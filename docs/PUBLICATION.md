@@ -2,10 +2,13 @@
 
 OARS is presented as a **proposed open, vendor-neutral standard**, with **Public Review Draft** status, at [catalinnovac03/oars](https://github.com/catalinnovac03/oars). The exact Core version is `0.4-draft`. The project invites review, independent implementation, and interoperability results; independent interoperability and adoption have not yet been demonstrated.
 
-## Open decisions
+## Confirmed publication decisions
 
-- **License TODO:** select and explicitly approve terms for the specification, schemas, examples, and code. No LICENSE is included.
-- Author/editor identities and formal governance are unassigned. Repository ownership and commit metadata do not establish specification authorship or organizational authority.
+- **License: [Apache 2.0](../LICENSE).** The specification, documentation, schemas, examples, fixtures, and code share one license. Existing third-party notices and separately licensed material retain their applicable terms.
+- **Author and editor: Catalin Novac.** Citation metadata records this attribution. No affiliation, additional contributors, or formal governance authority is asserted.
+
+## Remaining decisions and review work
+
 - A canonical public domain and global schema-identifier policy are unassigned. RFC 0001 is canonical within the repository.
 - Conduct reporting and enforcement responsibilities have not been established. Contribution etiquette is documented in CONTRIBUTING.md; no standalone code of conduct is adopted.
 - Establish serialization compatibility and document differences before claiming interoperability with other draft artifacts.

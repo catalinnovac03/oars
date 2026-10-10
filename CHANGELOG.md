@@ -4,6 +4,8 @@ OARS is a proposed open standard in public review. Breaking changes may occur be
 
 ## 0.4-draft — October 2026
 
+- Credit Catalin Novac as author/editor, add preferred citation metadata, and adopt Apache 2.0 for the repository. These are editorial publication changes; Core semantics remain unchanged.
+
 - Present OARS as a proposed open standard with Public Review Draft status; invite technical review, independent implementations, and interoperability results.
 
 - Rename the project to **Open Authority Record Standard**, retaining the OARS acronym and Core version.
